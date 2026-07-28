@@ -1,36 +1,113 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Muhammad Maaz — Portfolio
 
-## Getting Started
+A premium 3D personal portfolio website built with **Next.js 16**, **React Three Fiber**, **Framer Motion**, and **Tailwind CSS v4**.
 
-First, run the development server:
+## ✦ Tech Stack
+
+| Layer | Technology |
+|-------|-----------|
+| Framework | Next.js 16 (App Router) |
+| Language | TypeScript |
+| Styling | Tailwind CSS v4 + Custom CSS |
+| 3D | React Three Fiber + Drei + Three.js |
+| Animation | Framer Motion + GSAP |
+| Scroll | Lenis |
+| Icons | Lucide React |
+
+## ✦ Getting Started
 
 ```bash
+# Install dependencies
+npm install
+
+# Start development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Build for production
+npm run build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## ✦ Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+portfolio-app/
+├── app/                    # Next.js App Router pages
+│   ├── page.tsx            # Homepage
+│   ├── about/              # About page
+│   ├── work/               # All projects
+│   ├── work/[slug]/        # Project case study
+│   ├── contact/            # Contact page
+│   └── resume/             # Web résumé
+├── components/
+│   ├── layout/             # Navbar, Footer, Loader
+│   ├── sections/           # Page sections (Hero, About, Work…)
+│   ├── three/              # React Three Fiber scenes
+│   └── ui/                 # Reusable UI components
+├── data/                   # ← Edit portfolio content here
+│   ├── profile.ts          # Name, bio, contact, SEO
+│   ├── projects.ts         # Projects & case studies
+│   ├── experience.ts       # Work experience & education
+│   ├── skills.ts           # Skills grouped by category
+│   ├── achievements.ts     # Achievements, journey, gaming
+│   └── navigation.ts      # Nav items, social links
+├── lib/                    # Utilities and constants
+├── public/
+│   ├── IMG.png             # Profile photo
+│   └── cv/                 # Place CV PDF here as muhammad-maaz-cv.pdf
+└── types/index.ts          # TypeScript interfaces
+```
 
-## Learn More
+## ✦ Updating Content
 
-To learn more about Next.js, take a look at the following resources:
+All portfolio content lives in `data/`. You never need to touch layout or animation files to update:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Profile info** → `data/profile.ts`
+- **Add a project** → `data/projects.ts` (copy an existing entry)
+- **Work experience** → `data/experience.ts`
+- **Skills** → `data/skills.ts`
+- **Achievements / Journey** → `data/achievements.ts`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## ✦ Adding Your CV
 
-## Deploy on Vercel
+Place your CV PDF at:
+```
+public/cv/muhammad-maaz-cv.pdf
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## ✦ Contact Form Setup
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The contact form UI is complete. To make it functional, open `components/sections/ContactSection.tsx` and find the **INTEGRATION POINT** comment block. Uncomment and configure one of:
+
+- **Resend** (recommended) — Create `app/api/contact/route.ts`
+- **Formspree** — Replace the fetch URL
+- **EmailJS** — Add your keys to `.env.local`
+
+Copy `.env.example` → `.env.local` and fill in your keys.
+
+## ✦ Features
+
+- ✅ Cinematic dark design with orange accents
+- ✅ 3D animated hero (Three.js rings — Engineer / Builder / Esports)
+- ✅ Custom cursor (desktop only)
+- ✅ Scroll progress indicator
+- ✅ Smooth section animations (Framer Motion)
+- ✅ Interactive skill matrix with category panels
+- ✅ MARK47 featured project with case study drawer
+- ✅ Horizontal career timeline
+- ✅ Contact form with validation, loading, success & error states
+- ✅ SEO metadata + Open Graph + JSON-LD structured data
+- ✅ Dynamic sitemap + robots.txt
+- ✅ Web-based résumé page
+- ✅ Responsive across all screen sizes
+- ✅ WebGL fallback for unsupported browsers
+- ✅ prefers-reduced-motion support
+
+## ✦ Deployment
+
+Deploy to Vercel with zero config:
+
+```bash
+npx vercel
+```
