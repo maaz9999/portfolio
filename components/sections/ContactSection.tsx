@@ -472,9 +472,9 @@ export default function ContactSection() {
                       onFocus={(e) => (e.target.style.borderColor = 'var(--accent)')}
                       onBlur={(e) => (e.target.style.borderColor = 'var(--border)')}
                     >
-                      <option value="">Select type…</option>
+                      <option value="" style={{ backgroundColor: '#121217', color: '#a0a0a0' }}>Select type…</option>
                       {projectTypes.map((type) => (
-                        <option key={type} value={type}>{type}</option>
+                        <option key={type} value={type} style={{ backgroundColor: '#121217', color: '#ffffff' }}>{type}</option>
                       ))}
                     </select>
                   </div>
@@ -491,9 +491,9 @@ export default function ContactSection() {
                     onFocus={(e) => (e.target.style.borderColor = 'var(--accent)')}
                     onBlur={(e) => (e.target.style.borderColor = 'var(--border)')}
                   >
-                    <option value="">Select range…</option>
+                    <option value="" style={{ backgroundColor: '#121217', color: '#a0a0a0' }}>Select range…</option>
                     {budgetRanges.map((range) => (
-                      <option key={range} value={range}>{range}</option>
+                      <option key={range} value={range} style={{ backgroundColor: '#121217', color: '#ffffff' }}>{range}</option>
                     ))}
                   </select>
                 </div>

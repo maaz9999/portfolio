@@ -195,27 +195,6 @@ export const projects: Project[] = [
     githubUrl: null,
     color: '#a855f7',
   },
-  {
-    id: 'baaz',
-    slug: 'baaz',
-    title: 'BAAZ',
-    subtitle: 'Digital Gaming & Esports Hub',
-    status: 'Live Hub',
-    featured: false,
-    category: 'Esports Technology',
-    year: '2023',
-    role: 'Developer & Esports Specialist',
-    description:
-      'Esports gaming hub platform uniting competitive players, scrim schedules, and gaming community updates.',
-    shortDescription: 'Esports community platform for tournament rosters and gaming hub.',
-    features: ['Community Hub', 'Match Operations', 'Fast Mobile UI'],
-    caseStudy: null,
-    tags: ['Esports Platform', 'Community Hub', 'React', 'Tailwind CSS'],
-    thumbnail: '/images/projects/placeholder-thumb.jpg',
-    liveUrl: 'https://baaz-mu.vercel.app/',
-    githubUrl: null,
-    color: '#f59e0b',
-  },
 ];
 
 export const featuredProject = projects.find((p) => p.featured) ?? projects[0];
